@@ -19,7 +19,7 @@
                <input type="password" class="form-control" id="password" name="password" require>
             </div>
             @error('error')
-               <p class="error"> Error</p>
+               <p class="error"> {{$message}}</p>
             @enderror
             <button type="submit" class="btn btn-primary bt-100">Login</button>
          </form>

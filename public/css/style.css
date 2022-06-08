@@ -5,13 +5,12 @@
     font-size: 7rem;
 }
 
-.auth{
-    float: right;
-}
-.nav-item{
+
+.nav-link{
     text-align: center;
-    padding: 5px;
+    margin: 10px;
 }
-.nav-item:hover{
+
+.nav-link:hover{
     background-color: blue;
 }

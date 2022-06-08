@@ -1,0 +1,17 @@
+.titlePag{
+    color: black;
+    text-align: center;
+    margin-top: 15%;
+    font-size: 7rem;
+}
+
+.auth{
+    float: right;
+}
+.nav-item{
+    text-align: center;
+    padding: 5px;
+}
+.nav-item:hover{
+    background-color: blue;
+}

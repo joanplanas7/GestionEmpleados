@@ -1,12 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.navbar')
 
-@section('cssImports')
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-@endsection
 
-@section('content')
+@section('pages')
     <div class="container">
         <h1 class="titlePag">welcome to home.</h1>
-        <a href="/logout">Logout</a>
     </div>
 @endsection 

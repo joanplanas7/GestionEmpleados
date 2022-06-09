@@ -31,7 +31,10 @@
                         <td>{{$empleado -> email}}</td>
                         <td>{{$empleado -> salary}}</td>
                         <td>{{$empleado -> sector}}</td>
-                        <td>Editar</td>
+                        <td> 
+                            <a href="" class="btn btn-primary">Editar</a>
+                            <a href="" class="btn btn-danger">Eliminat</a>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>

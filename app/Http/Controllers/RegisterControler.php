@@ -13,12 +13,13 @@ class RegisterControler extends Controller
 
     public function store(){
 
-        $this -> validate( request(), [
+       $dades = $this -> validate( request(), [
             'name' => 'required',
             'email' => 'required | email',
             'password' => 'required | confirmed'
         ]);
-        $user = User::create(request(['name', 'email', 'password']));
+
+        $user = User::create($dades);
         auth()->login($user);
 
         return redirect('/home');

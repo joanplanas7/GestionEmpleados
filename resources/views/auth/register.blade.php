@@ -12,10 +12,10 @@
             @csrf
             <div class="mb-3">
                <label for="exampleInputPassword1" class="form-label">Name</label>
-               <input type="text" class="form-control" id="name" name="name" required>
+               <input type="text" class="form-control" id="name" name="name">
             </div>
             @error('name')
-               <p class="error"> {{$message}}</p>
+               <p class="alert alert-danger"> {{$message}}</p>
             @enderror
             <div class="mb-3">
                <label for="exampleInputEmail1" class="form-label">Email address</label>
@@ -29,11 +29,11 @@
                <input type="password" class="form-control" id="password" name="password" required>
             </div>
             @error('password')
-               <p class="error"> {{$message}}</p>
+               <p class="alert alert-danger"> {{$message}}</p>
             @enderror
             <div class="mb-3">
                <label for="exampleInputPassword1" class="form-label">Repit password</label>
-               <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm" required>
+               <input type="password" class="form-control" id="password" name="password_confirmation" required>
             </div>
             <button type="submit" class="btn btn-primary">Register</button>
          </form>

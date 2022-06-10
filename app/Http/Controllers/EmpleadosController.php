@@ -14,8 +14,7 @@ class EmpleadosController extends Controller
      */
     public function index()
     {
-        $empleados = Empleado::orderByDesc('id')->get();
-        return view('empleados.index')->with('empleados', $empleados);
+        return view('empleados.index');
     }
 
     /**

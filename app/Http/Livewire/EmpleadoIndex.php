@@ -11,15 +11,22 @@ class EmpleadoIndex extends Component
     use WithPagination;
     
     public $busqueda = '';
-    public $pag = 10;
+    public $pag = 1;
     protected $paginationTheme = 'bootstrap';
 
     public function render()
     {
         $emplados = $this->consulta();
-       
+        $emplados = $emplados->paginate($this->pag);
+        
+        if($emplados->currentPage() > $emplados->lastPage() ){
+            $this->resetPage();
+            $emplados = $this->consulta();
+            $emplados->paginate($this->pag);
+        }
+
         $params = [
-            'empleados' => $emplados->paginate($this->pag),
+            'empleados' => $emplados, 
         ];
         
        

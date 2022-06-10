@@ -24,4 +24,4 @@ Route::post('/login', [LoginControler::class, 'store'])->name('login.store');
 Route::get('/logout', [LoginControler::class, 'destroy'])->name('login.destroy');
 
 
-Route::resource('/empleados', EmpleadosController::class);
+Route::resource('/empleados', EmpleadosController::class)->except('show');

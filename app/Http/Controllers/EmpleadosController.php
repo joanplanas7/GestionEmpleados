@@ -67,17 +67,6 @@ class EmpleadosController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
@@ -85,7 +74,8 @@ class EmpleadosController extends Controller
      */
     public function edit($id)
     {
-        //
+        $empleado = Empleado::find($id);
+        return view('empleados.update')->with('empleado', $empleado);
     }
 
     /**
@@ -97,7 +87,16 @@ class EmpleadosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $empleado = Empleado::find($id);
+
+        $empleado -> name = $request -> nombre;
+        $empleado -> email = $request -> email;
+        $empleado -> salary = $request -> salario;
+        $empleado -> sector = $request -> sector;
+
+        $empleado->save();
+
+        return redirect('/empleados');
     }
 
     /**
@@ -108,6 +107,9 @@ class EmpleadosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $empleado = Empleado::find($id);
+        $empleado->delete();
+        return redirect()->route('empleados.index');
     }
 }

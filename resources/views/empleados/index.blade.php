@@ -3,16 +3,16 @@
 
 @section('pages')
     <div class="container shadow bg-white">
-        <div class="row">
+        <div class="row  my-4">
             <div class="col-sm-12">
                 <h1>Gestion Empleados</h1>
             </div>
             <div class="col-sm-12">
-                <a href="{{ route('empleados.create') }}" class="btn btn-link">Añadir empleado</a>
+                <a href="{{ route('empleados.create') }}" class="btn btn-primary">Añadir empleado</a>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row my-4">
             <h3>Empleados</h3>
             <table class="table table-stripped table-hover">
                 <thead>
@@ -32,8 +32,12 @@
                         <td>{{$empleado -> salary}}</td>
                         <td>{{$empleado -> sector}}</td>
                         <td> 
-                            <a href="" class="btn btn-primary">Editar</a>
-                            <a href="" class="btn btn-danger">Eliminat</a>
+                            <a href="{{ route('empleados.edit', $empleado)}}" class="btn btn-primary">Editar</a>
+                            <form action="{{ route('empleados.destroy', $empleado)}}" method="POST">
+                                @csrf
+                                @method('Delete')
+                                <button type="submit" class="btn btn-danger">Borrar</button>
+                            </form>
                         </td>
                     </tr>
                     @endforeach

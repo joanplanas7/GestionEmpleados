@@ -11,7 +11,7 @@ class EmpleadoIndex extends Component
     use WithPagination;
     
     public $busqueda = '';
-    public $pag = 1;
+    public $pag = 10;
     protected $paginationTheme = 'bootstrap';
 
     public function render()
